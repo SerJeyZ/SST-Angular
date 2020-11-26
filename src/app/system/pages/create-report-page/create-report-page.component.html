@@ -1,0 +1,240 @@
+<div class="report-create-page">
+  <section class="section">
+    <div class="row sameheight-container justify-content-center">
+      <div class="col col-800">
+        <h1 class="title mb-4 ">Создать отчёт</h1>
+        <form class="report-create" id="report-create" action="#" method="POST" novalidate="">
+          <div class="form-group">
+            <label for="report-period">Период отчёта</label>
+            <input class="date-range report-period form-control form-control-lg" type="text" name="report-period"
+              id="report-period" value="01/01/2020 - 31/01/2020" />
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-6">
+                <span class="select-lable">Заказчик</span>
+                <div class="filter-block">
+                  <ul class="filte-list" id="customers-list">
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="1" type="checkbox">
+                        <span class="filter-list__text"> ООО "Вектор" </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="2" type="checkbox">
+                        <span class="filter-list__text"> ИП Иванов </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="3" type="checkbox">
+                        <span class="filter-list__text"> ООО "Три кота" </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="4" type="checkbox">
+                        <span class="filter-list__text"> ИП Путинцев</span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="5" type="checkbox">
+                        <span class="filter-list__text"> ООО "Marvel"</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6">
+                <span class="select-lable">Проект</span>
+                <div class="filter-block">
+                  <ul class="filte-list" id="projects-list">
+                    <li class="filter-list__item d-none" data-idcust="1">
+                      <label>
+                        <input class="checkbox" type="checkbox">
+                        <span class="filter-list__text"> New tracker</span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item d-none" data-idcust="1">
+                      <label>
+                        <input class="checkbox" type="checkbox">
+                        <span class="filter-list__text"> Service int </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item d-none" data-idcust="2">
+                      <label>
+                        <input class="checkbox" type="checkbox">
+                        <span class="filter-list__text"> ПланФакт </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item d-none" data-idcust="3">
+                      <label>
+                        <input class="checkbox" type="checkbox">
+                        <span class="filter-list__text"> Support </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item d-none" data-idcust="4">
+                      <label>
+                        <input class="checkbox" type="checkbox">
+                        <span class="filter-list__text"> Promo company </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item d-none" data-idcust="5">
+                      <label>
+                        <input class="checkbox" type="checkbox">
+                        <span class="filter-list__text"> Email company </span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-6">
+                <span class="select-lable">Исполнители</span>
+                <div class="filter-block">
+                  <ul class="filte-list" id="performers-list">
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="1" type="checkbox">
+                        <span class="filter-list__text"> Иванов </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="2" type="checkbox">
+                        <span class="filter-list__text"> Петров </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="3" type="checkbox">
+                        <span class="filter-list__text"> Сидоров </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="4" type="checkbox">
+                        <span class="filter-list__text"> Васильев </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="5" type="checkbox">
+                        <span class="filter-list__text"> Соловьёв </span>
+                      </label>
+                    </li>
+                    <li class="filter-list__item">
+                      <label>
+                        <input class="checkbox" data-idcust="6" type="checkbox">
+                        <span class="filter-list__text"> Рожков </span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6">
+                <span class="select-lable">Рейт исполнителя</span>
+                <div class="filter-block" id="input-user-block">
+                  <ul class="user-rate" id="performers-rate">
+                    <li class="user-rate__item d-none" data-idcust="1">
+                      <label for="customer1-rate">Иванов</label>
+                      <input type="text" name="Иванов" id="customer1-rate" value="1000">
+                    </li>
+                    <li class="user-rate__item d-none" data-idcust="2">
+                      <label for="customer2-rate">Петров</label>
+                      <input type="text" name="Петров" id="customer2-rate" value="1000">
+                    </li>
+                    <li class="user-rate__item d-none" data-idcust="3">
+                      <label for="customer3-rate">Сидоров</label>
+                      <input type="text" name="Сидоров" id="customer3-rate" value="1000">
+                    </li>
+                    <li class="user-rate__item d-none" data-idcust="4">
+                      <label for="customer3-rate">Васильев</label>
+                      <input type="text" name="Сидоров" id="customer4-rate" value="1000">
+                    </li>
+                    <li class="user-rate__item d-none" data-idcust="5">
+                      <label for="customer3-rate">Соловьёв</label>
+                      <input type="text" name="Сидоров" id="customer5-rate" value="1000">
+                    </li>
+                    <li class="user-rate__item d-none" data-idcust="6">
+                      <label for="customer3-rate">Рожков</label>
+                      <input type="text" name="Сидоров" id="customer6-rate" value="1000">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <legend>Группировать по :</legend>
+            <div class="form-row">
+              <div class="select-wrap col-4">
+                <label class="custom-select-lable"></label>
+                <input class="custom-select" id="input-filter1" type="text" value="Проект">
+                <em class="fa fa-chevron-down"></em>
+                <div class="select-menu-wrap select-menu-wrap--up d-none" id="filter-menu">
+                  <ul class="select-menu">
+                    <li class="select-menu__item">Проект</li>
+                    <li class="select-menu__item">Исполнитель</li>
+                    <li class="select-menu__item">Задача</li>
+                    <li class="select-menu__item">Дата</li>
+                    <li class="select-menu__item">Без группировки</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="select-wrap select-menu-wrap--up col-4">
+                <label class="custom-select-lable"></label>
+                <input class="custom-select" id="input-filter2" type="text" value="Исполнитель">
+                <em class="fa fa-chevron-down"></em>
+                <div class="select-menu-wrap select-menu-wrap--up d-none" id="filter-menu">
+                  <ul class="select-menu">
+                    <li class="select-menu__item">Проект</li>
+                    <li class="select-menu__item">Исполнитель</li>
+                    <li class="select-menu__item">Задача</li>
+                    <li class="select-menu__item">Дата</li>
+                    <li class="select-menu__item">Без группировки</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="select-wrap col-4">
+                <label class="custom-select-lable"></label>
+                <input class="custom-select" id="input-table-filter3" type="text" value="Задача">
+                <em class="fa fa-chevron-down"></em>
+                <div class="select-menu-wrap select-menu-wrap--up d-none" id="filter-menu">
+                  <ul class="select-menu">
+                    <li class="select-menu__item">Проект</li>
+                    <li class="select-menu__item">Исполнитель</li>
+                    <li class="select-menu__item">Задача</li>
+                    <li class="select-menu__item">Дата</li>
+                    <li class="select-menu__item">Без группировки</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="report-btn mt-5">
+            <button type="button" class="btn btn-primary btn-lg">Создать отчёт</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <template id="create-report-template">
+      <li class="filter-list__item">
+        <label>
+          <input class="checkbox" type="checkbox">
+          <span class="filter-list__text"> Иванов </span>
+        </label>
+      </li>
+      <li class="user-rate__item">
+        <label for="customer3-rate">Сидоров</label>
+        <input type="text" name="Сидоров" id="customer3-rate" value="0">
+      </li>
+    </template>
+  </section>
+</div>

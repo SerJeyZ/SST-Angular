@@ -1,0 +1,47 @@
+<p class="text-center fz30">Новый пароль</p>
+<form id="signup-form" [formGroup]="form" (ngSubmit)="submit()">
+
+  <div class="form-group" formGroupName="password">
+    <div class="row">
+
+      <div class="col-sm-12 mt15"
+        [ngClass]="{'has-error':form.get('password').get('pass').invalid&&form.get('password').get('pass').touched}"
+      >
+        <input 
+          type="password" 
+          class="form-control underlined" 
+          name="password" 
+          id="password"
+          placeholder="Введите пароль" 
+          formControlName="pass"
+        >
+        <span *ngIf="form.get('password').get('pass').invalid&&form.get('password').get('pass').touched">
+          <span class="form-input-error" *ngIf="form.get('password').get('pass').errors.required">Введите
+            пароль</span>
+          <span class="form-input-error" *ngIf="form.get('password').get('pass').errors.minlength">Минимальная длина
+            {{form.get('password').get('pass').errors.minlength.requiredLength}} символов
+          </span>
+          
+        </span>
+        
+      </div>
+
+      <div class="col-sm-12 mt15">
+        <input type="password" class="form-control underlined" name="retype_password" id="retype_password"
+          placeholder="Повторите пароль" formControlName="pass2">
+        <span *ngIf="form.get('password').get('pass2').dirty||form.get('password').get('pass2').touched">
+          <span class="form-input-error" *ngIf="form.get('password').errors?.invalidPass">Пароли не совпадают</span>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group mt40">
+    <button 
+      type="submit" 
+      class="btn btn-block btn-primary"
+      [disabled]="form.invalid"
+      >Сменить пароль</button>
+  </div>
+</form>

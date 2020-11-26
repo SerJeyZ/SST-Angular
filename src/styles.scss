@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.sidebar-main-menu {
+  .mat-list-item {
+    .mat-list-item {
+      margin-left: 20px;
+    }
+  }
+  .level-2 {
+    a {
+      background-color:#333e48;
+      padding-left: 20px;
+    }
+    
+  }
+  .mat-list-base .mat-list-item .mat-list-item-content {
+    padding: 0;
+  }
+
+  .anml-link {
+    padding     : 15px;
+    padding-left: 20px;
+    text-transform: none!important;
+    .label {
+      margin          : 0;
+      padding         : 0;
+      font-size: 14px;
+      font-family: "Open Sans",sans-serif;
+      color: inherit;
+      background-color: transparent;
+    }
+  }
+  .anml-link:hover .label {
+    color           : inherit;
+    background-color:transparent;
+  }
+
+  a:not(.btn):hover {
+    color           : #ffffff;
+    background-color: #2d363f;
+    text-decoration: none;
+  }
+  .icon-container>span {
+    margin-right: 8px;
+  }
+  .icon-container {
+    width: 39px;
+  }
+  // .active-amml-item {
+  //   color: #ffffff;
+  //   .anml-link {
+  //     background-color: #fe821d;
+  //   }
+  //   .label {
+  //     color: #ffffff;
+  //   }
+  // }
+  .selected-amml-item {
+    color: #ffffff!important;
+    background-color: #fe821d!important;
+  }
+  .active-amml-item {
+    color: #ffffff;
+    // a {
+    //   color: #ffffff;
+    // }
+  }
+  .selected-amml-item .active-amml-item {
+    background-color: #fe821d!important;
+  }
+}

@@ -1,0 +1,70 @@
+<aside class="sidebar">
+  <div class="sidebar-container">
+    <div class="sidebar-header">
+      <div class="brand">
+        <div class="logo">
+          <span class="l l1"></span>
+          <span class="l l2"></span>
+          <span class="l l3"></span>
+          <span class="l l4"></span>
+          <span class="l l5"></span>
+        </div> ShareSpot.Tracker
+      </div>
+    </div>
+    <nav class="menu">
+      <ng-material-multilevel-menu [configuration]='config' [items]='appitems' (selectedItem)="selectedItem($event)" (selectedLabel)="selectedLabel($event)">
+      </ng-material-multilevel-menu>
+      <!-- <ul class="sidebar-menu metismenu" id="sidebar-menu">
+        <li class="active">
+          <a href="index.html">
+            <i class="fa fa-home"></i> Доска </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-th-large"></i> Работа <i class="fa arrow"></i>
+          </a>
+          <ul class="sidebar-nav">
+            <li>
+              <a href="items-list.html"> Логи времени </a>
+            </li>
+            <li>
+              <a href="item-editor.html"> Календарь </a>
+            </li>
+            <li>
+              <a href="items-tasks.html"> Назначеные задачи </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-area-chart"></i> Отчёты <i class="fa arrow"></i>
+          </a>
+          <ul class="sidebar-nav">
+            <li>
+              <a href="charts-flot.html"> Создать отчёт </a>
+            </li>
+            <li>
+              <a href="charts-morris.html"> Список отчётов компании </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-table"></i> Компания <i class="fa arrow"></i>
+          </a>
+          <ul class="sidebar-nav">
+            <li>
+              <a href="static-tables.html"> Список работников </a>
+            </li>
+            <li>
+              <a href="responsive-tables.html"> Профиль компании </a>
+            </li>
+            <li>
+              <a href="customers.html"> Заказчики </a>
+            </li>
+          </ul>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</aside>

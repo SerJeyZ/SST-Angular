@@ -1,0 +1,6 @@
+.form-group-col {
+  @media(max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+  }
+}

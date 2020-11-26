@@ -1,0 +1,131 @@
+<p class="text-center fz30">Регистрация</p>
+<form id="signup-form" [formGroup]="formReg" (ngSubmit)="submit()">
+  <div class="form-group" [ngClass]="{'has-error':formReg.get('login').invalid&&formReg.get('login').touched}">
+    <label for="login">Логин</label>
+    <input type="text" class="form-control underlined" name="login" id="login" placeholder="Введите ваш логин"
+      formControlName="login">
+    <span *ngIf="formReg.get('login').invalid&&formReg.get('login').touched">
+      <span class="form-input-error" *ngIf="formReg.get('login').errors.required">Заполните поле логин</span>
+    </span>
+  </div>
+  <div class="form-group" [ngClass]="{'has-error':formReg.get('email').invalid&&formReg.get('email').touched}">
+    <label for="email">Эл. почта</label>
+    <input type="email" class="form-control underlined" name="email" id="email" placeholder="Введите ваш email"
+      formControlName="email">
+    <span *ngIf="formReg.get('email').invalid&&formReg.get('email').touched">
+      <span class="form-input-error" *ngIf="formReg.get('email').errors.required">Заполните поле email</span>
+      <span class="form-input-error"
+        *ngIf="formReg.get('email').errors.email||formReg.get('email').errors.pattern">Введите корректный email</span>
+    </span>
+  </div>
+  <div class="form-group" formGroupName="password">
+    <label for="password">Пароль</label>
+    <div class="row">
+      <div class="col-sm-6"
+        [ngClass]="{'has-error':formReg.get('password').get('pass').invalid&&formReg.get('password').get('pass').touched}">
+        <input type="password" class="form-control underlined" name="password" id="password"
+          placeholder="Введите пароль" formControlName="pass">
+        <span *ngIf="formReg.get('password').get('pass').invalid&&formReg.get('password').get('pass').touched">
+          <span class="form-input-error" *ngIf="formReg.get('password').get('pass').errors.required">Введите
+            пароль</span>
+          <span class="form-input-error" *ngIf="formReg.get('password').get('pass').errors.minlength">Минимальная длина
+            {{formReg.get('password').get('pass').errors.minlength.requiredLength}} символов</span>
+        </span>
+      </div>
+      <div class="col-sm-6">
+        <input type="password" class="form-control underlined" name="retype_password" id="retype_password"
+          placeholder="Повторите пароль" formControlName="pass2"
+        >
+        <span *ngIf="formReg.get('password').get('pass2').dirty||formReg.get('password').get('pass2').touched">
+          <span class="form-input-error" *ngIf="formReg.get('password').errors?.invalidPass">Пароли не совпадают</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="{'has-error':formReg.get('fistName').invalid&&formReg.get('fistName').touched}">
+    <label for="user-name">Имя</label>
+    <input type="text" class="form-control underlined" name="user-name" id="user-name" placeholder="Введите ваш имя"
+      formControlName="fistName">
+    <span *ngIf="formReg.get('fistName').invalid&&formReg.get('fistName').touched">
+      <span class="form-input-error" *ngIf="formReg.get('fistName').errors.required">Введите ваше имя</span>
+    </span>
+  </div>
+
+  <div 
+    class="form-group" 
+    [ngClass]="{'has-error':formReg.get('lastName').invalid&&formReg.get('lastName').touched}"
+  >
+    <label for="user-second-name">Отчество</label>
+    <input 
+      type="text" 
+      class="form-control underlined" 
+      name="user-second-name" 
+      id="user-second-name" 
+      placeholder="Введите ваш отчество" 
+      formControlName="lastName"
+    >
+    <span *ngIf="formReg.get('lastName').invalid&&formReg.get('lastName').touched">
+      <span 
+        class="form-input-error" 
+        *ngIf="formReg.get('lastName').errors.required"
+      >Введите ваше отчество
+      </span>
+    </span>
+  </div>
+
+  <div 
+    class="form-group"
+    [ngClass]="{'has-error':formReg.get('surname').invalid&&formReg.get('surname').touched}"
+  >
+    <label for="user-last-name">Фамилия</label>
+    <input 
+      type="text" 
+      class="form-control underlined" 
+      name="user-last-name" 
+      id="user-last-name"
+      placeholder="Введите вашу фамилию" 
+      formControlName="surname"
+    >
+    <span *ngIf="formReg.get('surname').invalid&&formReg.get('surname').touched">
+      <span class="form-input-error" *ngIf="formReg.get('surname').errors.required">Введите вашу фамилию
+      </span>
+    </span>
+  </div>
+
+  <div 
+    class="form-group"
+    [ngClass]="{'has-error':formReg.get('phone').invalid&&formReg.get('phone').touched}"
+  >
+    <label for="user-phone">Телефон</label>
+    <input 
+      type="tel" 
+      class="form-control underlined" 
+      name="user-phone" id="user-phone"
+      placeholder="Введите ваш телефон" 
+      formControlName="phone"
+    >
+    <span *ngIf="formReg.get('phone').invalid&&formReg.get('phone').touched">
+      <span class="form-input-error" *ngIf="formReg.get('phone').errors.required">Заполните поле телефон
+      </span>
+      <span class="form-input-error" *ngIf="formReg.get('phone').errors.pattern">Не корректный номер (пример 88002000600 или +78002000600)
+      </span>
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="agree" (mousedown)="agreement = !agreement">
+      <input class="checkbox" name="agree" id="agree" type="checkbox" required="">
+      <span [ngClass]="{'error-span-under':agreement===false}">Я принимаю условия <a href="#">соглашения</a></span>
+    </label>
+  </div>
+  <div class="form-group">
+    <button 
+      type="submit" 
+      class="btn btn-block btn-primary"
+      [disabled]="formReg.invalid||agreement===false"
+    >Регистрация</button>
+  </div>
+  <div class="form-group">
+    <p class="text-muted text-center">Уже есть аккаунт? <a routerLink="/" class="ml5" href="#">Войти</a></p>
+  </div>
+</form>

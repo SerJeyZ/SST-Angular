@@ -1,0 +1,16 @@
+.sidebar-main-menu {
+  a {
+    color: red;
+  }
+  .mat-list-item-content {
+    padding: 0;
+  }
+  .anml-link {
+    padding: 15px;
+    padding-left: 20px;
+  }
+  a:not(.btn):hover {
+    color: #ffffff;
+    background-color: #2d363f;
+  }
+}
